@@ -1,0 +1,77 @@
+<div class="body fw-bold">
+    <div class="container ">
+        <div class="row yuk">
+            <div class="col-md-7 mx-auto my-auto">
+                <form #newPersonForm="ngForm">
+                    <div class="bg-secondary container rounded">
+                        {{ jsonPerson }} {{ jsonAdres }}
+                    </div>
+                    <fieldset class="p-4 bg-light rounded shadow">
+                        <legend class="text-center display-5 mb-5">Site Üyelik Formu</legend>
+                        <div class="row mb-3">
+                            <label for="ad-soyad" class="col-form-label col-md-3">Ad Soyad</label>
+                            <div class="col-md-9">
+                                <input #name="ngModel" required minlength="5" maxlength="30"
+                                    [(ngModel)]="newPerson.name" name="name" class="form-control" type="text"
+                                    id="ad-soyad" placeholder="Adınız Soyadınız">
+                                <ul style="list-style: none;" class="mt-2 alert alert-danger">
+                                    <li *ngFor="let error of getFormErrors(newPersonForm, name.name)">
+                                        {{ error }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="mail" class="col-form-label col-md-3">E-Mail</label>
+                            <div class="col-md-9">
+                                <input #mail="ngModel" required pattern="^[A-Za-z ]+$" name="mail"
+                                    [(ngModel)]="newPerson.email" class="form-control" placeholder="Mail Adresiniz">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="adres" class="col-form-label my-auto col-md-3">Adres Bilgileri</label>
+                            <div class="col-md-9">
+                                <div class="row mb-2">
+                                    <div class="col-md-6 mb-1">
+                                        <input #city="ngModel" [(ngModel)]="adres.city" name="city" type="text"
+                                            placeholder="Şehir" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 mb-1">
+                                        <input name="disticy" #disticy="ngModel" [(ngModel)]="adres.disticy" type="text"
+                                            id="ilce" placeholder="İlçe" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-1">
+                                        <input name="postCode" #postCode="ngModel" [(ngModel)]="adres.postCode"
+                                            type="text" id="pk" placeholder="Posta Kodu" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 mb-1">
+                                        <select name="country" #country="ngModel" [(ngModel)]="adres.country"
+                                            name="country" id="ulke" class="form-select">
+                                            <option value="turkey" selected>Türkiye</option>
+                                            <option value="france">Fransa</option>
+                                            <option value="portugal">Portekiz</option>
+                                            <option value="finland">Finlandiya</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="aciklama" class="form-label col-md-3 col-form-label my-auto">Açıklama</label>
+                            <div class="col-md-9">
+                                <textarea #desc name="desc" [(ngModel)]="newPerson.desc" class="form-control"
+                                    placeholder="Açıklama"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3 mx-auto">
+                            <button (click)="formLog(newPersonForm); getFormErrors(newPersonForm, name.name)"
+                                class="mx-auto btn btn-primary col-md-2">Kaydet</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

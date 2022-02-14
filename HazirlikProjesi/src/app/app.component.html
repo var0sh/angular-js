@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-5 align-items-center">
+      <h3 class="bg-primary text-white p-3 mb-4 rounded">
+        [{{getName()}}] To Do List
+      </h3>
+
+      <div class="input-group mb-1">
+        <input type="text" class="form-control" #todoText>
+        <button class="btn btn-outline-primary" type="button"
+          (click)="addItem(todoText.value); todoText.value = '' ">Add</button>
+      </div>
+
+      <div class="custom-control custom-checkbox my-3 float-end">
+        <input type="checkbox" [(ngModel)]="isDisplay" class="custom-control-input me-1" id="displayAll">
+        <label for="displayAll" class="custom-control-label">Display All</label>
+      </div>
+
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of getItems(); let i = index;">
+            <td>{{ i + 1 }}</td>
+            <td>{{item.description}}</td>
+            <td>
+              <input type="checkbox" [(ngModel)]="item.action">
+            </td>
+            <td [ngSwitch]="item.action">
+              <span *ngSwitchCase="true">Yes</span>
+              <span *ngSwitchCase="false">No</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

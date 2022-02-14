@@ -1,0 +1,17 @@
+<div class="container w-50 p-5">
+    <form>
+        <input required minlength="4" #name="ngModel" class="form-control" name="name" [(ngModel)]="hero.name" required
+            minlength="4" appForbiddenName="bob">
+        <div *ngIf="name.invalid && (name.touched || name.dirty)" class="alert my-2">
+            <div *ngIf="name.errors?.['required']" class="alert alert-danger">
+                Name is required
+            </div>
+            <div *ngIf="name.errors?.['minlength']" class="alert alert-danger">
+                Name must be at least 4 characters long
+            </div>
+            <div *ngIf="name.errors?.['ForbiddenName']" class="alert alert-danger">
+                Name cannot be Bob
+            </div>
+        </div>
+    </form>
+</div>

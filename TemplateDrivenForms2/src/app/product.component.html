@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="m-3">
+                <div class="bg-info text-white m-2 p-2">
+                    {{ jsonProduct }}
+                </div>
+                <form #form="ngForm" (ngSubmit)="submitForm(form)">
+                    <div class="bg-danger text-white p-3 my-2" *ngIf="(formSubmitted && form.invalid)">
+                        An error occurred
+                        <ul>
+                            <li *ngFor="let error of getFormValidationErrors(form)">
+                                {{ error }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>name</label>
+                        <input (change)="log(name)" minlength="3" maxlength="10" pattern="^[A-Za-z ]+$"
+                            [(ngModel)]="newProduct.name" class="form-control" #name="ngModel" required name="name">
+                        <div class="alert alert-danger mt-2" *ngIf="!name.valid && name.touched">
+                            <ul>
+                                <li *ngFor="let error of getValidationErrors(name)">
+                                    {{ error }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>desc</label>
+                        <textarea [(ngModel)]="newProduct.description" class="form-control" #desc="ngModel" required
+                            name="description"></textarea>
+                        <div *ngIf="!desc.valid && desc.touched" class="alert alert-danger mt-2">
+                            Description is required
+                        </div>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>price</label>
+                        <input [(ngModel)]="newProduct.price" class="form-control" name="price" #price="ngModel"
+                            required>
+                        <div class="alert alert-danger mt-2" *ngIf="!price.valid && price.touched">
+                            Price is required
+                        </div>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label>image url</label>
+                        <input class="form-control" [(ngModel)]="newProduct.imageUrl" name="image url"
+                            #imageUrl="ngModel" required>
+                        <div class="alert alert-danger mt-2" *ngIf="!imageUrl.valid && imageUrl.touched">
+                            Image url is required
+                        </div>
+                    </div>
+                    <button [disabled]="formSubmitted && form.invalid"
+                        [class.btn-secondary]="formSubmitted && form.invalid" type="submit" class="btn btn-primary mt-2"
+                        type="submit" (click)="addProduct(newProduct)">add prd</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

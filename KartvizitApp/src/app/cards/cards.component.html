@@ -1,0 +1,27 @@
+<main>
+  <div class="d-flex align-items-center">
+    <div class="flex-grow-1">
+      <h1 class="pageTitle">Kartvizitler</h1>
+      <p class="pageDesc">Bu ekranda kartvizitlerinizi yönetebilirsiniz</p>
+    </div>
+    <button (click)="openAddCardModel()" mat-raised-button color="primary">Yeni Kartvizit</button>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <card-item [cardItem]="cardItem"></card-item>
+    </div>
+    <div class="col-md-3 mb-3">
+      <card-item [cardItem]="cardItem"></card-item>
+    </div>
+    <div class="col-md-3 mb-3">
+      <card-item [cardItem]="cardItem"></card-item>
+    </div>
+    <div class="col-md-3 mb-3">
+      <card-item [cardItem]="cardItem"></card-item>
+    </div>
+    <div class="col-md-3 mb-3">
+      <card-item [cardItem]="cardItem"></card-item>
+    </div>
+  </div>
+</main>

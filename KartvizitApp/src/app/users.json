@@ -1,0 +1,9 @@
+{
+  "users": [
+    {"title": "Furkan", "subTitle": "Frontend Developer", "phone": "05416725670", "email": "abc@gmail.com", "address": "Tepebaşı *ESKİŞEHİR"},
+    {"title": "Ufuk", "subTitle": "Student", "phone": "05621423567", "email": "def@gmail.com", "address": "Yeşiltepe *ESKİŞEHİR"},
+    {"title": "Kenan", "subTitle": "Student", "phone": "05788907649", "email": "ghı@gmail.com", "address": "Çamlıca *ESKİŞEHİR"},
+    {"title": "Furkan", "subTitle": "Student", "phone": "05614312345", "email": "ijk@gmail.com", "address": "Batıkent *ESKİŞEHİR"},
+    {"title": "Bilal", "subTitle": "Student", "phone": "05679088081", "email": "lmn@gmail.com", "address": "Hayırtepe *ESKİŞEHİR"}
+  ]
+}

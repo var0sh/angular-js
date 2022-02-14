@@ -1,0 +1,79 @@
+<!-- <div class="bg-primary text-white m-2 p-2" *ngIf="model.getProducts().length > 0">
+    Veri tabanında {{ model.getProducts().length }} tane veri var.
+</div>
+<div class="bg-primary text-white m-2 p-2" *ngIf="model.getProducts().length == 0">
+    Veri tabanında hiç ürün yok.
+</div> -->
+
+<!-- //*********************************************** -->
+
+<!-- <div *ngIf="model.getProducts().length > 0 ; then productList else noProducts">
+
+</div>
+<ng-template #productList>
+    <div class="bg-primary text-white m-2 p-2">
+        Veri tabanında {{ model.getProducts().length }} tane veri var.
+    </div>
+</ng-template>
+<ng-template #noProducts>
+    <div class="bg-primary text-white m-2 p-2">
+        Veri tabanında hiç ürün yok.
+    </div>
+</ng-template> -->
+
+<!-- //*********************************************** -->
+<!-- 
+<div [hidden]="model.getProducts().length == 0" class="bg-primary text-white m-2 p-2">
+    Veri tabanında {{ model.getProducts().length }} tane veri var.
+</div>
+<div [hidden]="model.getProducts().length > 0" class="bg-primary text-white m-2 p-2">
+    Veri tabanında hiç ürün yok.
+</div> -->
+
+<!-- //*********************************************** -->
+
+<!-- <div class="bg-info m-2 p-2" [ngSwitch]="model.getProductCount()">
+    <span *ngSwitchCase="0">There are no products</span>
+    <span *ngSwitchCase="1">There are 1 product</span>
+    <span *ngSwitchCase="2">There are 2 products</span>
+    <span *ngSwitchDefault="0">There are many products</span>
+</div>
+<div class="bg-info m-2 p-2" [ngSwitch]="model.getProductsById(2).name">
+    <span *ngSwitchCase="'Samsung S5'">Samsung S5</span>
+    <span *ngSwitchCase="'Samsung S6'">Samsung S6</span>
+    <span *ngSwitchCase="'Samsung S7'">Samsung S7</span>
+    <span *ngSwitchDefault>Other product.</span>
+</div> -->
+
+<!-- //*********************************************** -->
+
+<!-- <div class="m-5">
+    <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+    <ul class="mt-2 list-group">
+        <li *ngFor="let product of model.getProducts()">
+            {{ product.name }}
+            <button class="btn btn-danger" (click)="deleteProduct(product)">Delete Product</button>
+            <button class="btn btn-warning" (click)="updateProduct(product)">Update Product</button>
+        </li>
+    </ul>
+</div> -->
+
+<!-- //*********************************************** -->
+
+<!-- <ng-template [ngTemplateOutlet]="productList" [ngTamplateOutletContext]="{products: model.getProducts()}">
+</ng-template>
+<ng-template [ngTemplateOutlet]="productList" [ngTamplateOutletContext]="{products: model.getProducts()}"></ng-template>
+
+<ng-template #productList let-products="products">
+    <div class="m-5">
+        <ul class="mt-2 list-group">
+            <li *ngFor="let product of products;" class="list-group-item">
+                {{ product.name }}
+            </li>
+        </ul>
+    </div>
+</ng-template> -->
+
+<!-- //*********************************************** -->
+
+<input type="text" appInputEmail>

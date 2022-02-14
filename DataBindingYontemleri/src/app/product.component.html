@@ -1,0 +1,63 @@
+<!-- <div class="bg-primary text-white m-2 p-2">
+    There are {{ model.getProducts().length }} products in the repository.
+</div>
+
+<div class="text-white" [class]="getClasses(1)">
+    katalogtaki ilk ürün {{ model.getProductById(1).name }}
+</div>
+
+<div [class]="getClasses(2)">
+    katalogtaki ikinci ürün {{ model.getProductById(2).name }}
+</div>
+
+<button class="btn btn-primary" [class.disabled]="disabled">Submit</button>
+
+<div class="m-2 p-2" [ngClass]="getClassMap(1)">
+    katalogtaki ilk ürün {{ model.getProductById(1).name }}
+</div>
+
+<div class="m-2 p-2" [ngClass]="getClassMap(2)">
+    katalogtaki ikinci ürün {{ model.getProductById(2).name }}
+</div>
+
+<div (click)="onDivClicked()" style="background-color: red;">
+    <button name="btn1" class="btn btn-primary" (click)="onSubmit($event)"> Button </button>
+    <button name="btn2" class="btn btn-primary" (click)="onSubmit($event)"> Button </button>
+</div>
+
+<input #email type="text" (keyup.enter)="onKeyUp1(email.value)"> 
+
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp2()">
+<br>
+<span>{{email}}</span>
+
+<h4> Lower-Upper-Title CasePipe </h4>
+<p>{{ title }}</p>
+<p>{{ title | lowercase }}</p>
+<p>{{ title | uppercase }}</p>
+<p>{{ title | titlecase }}</p>
+
+
+<h4> Date Pipe </h4>
+<p>{{ today }}</p>
+<p>{{ today | date }}</p>
+<p>{{ today | date: 'fullDate' }}</p>
+<p>{{ today | date: 'medium' }}</p>
+<p>{{ today | date: 'shortTime' }}</p>
+<p>{{ today | date: 'fullTime' }}</p>
+<p>{{ today | date: 'h:mm:ss' }}</p>
+
+<h4> Decimal Pipe </h4>
+<p> {{ students }} </p>
+<p> {{ students | number }} </p>
+<p> {{ students | number: '2.5-6' }} </p>
+        
+<h4> Curreny Pipe </h4>
+<p> {{ price  }} </p>
+<p> {{ price | currency }} </p>
+        
+<h4> Percent Pipe </h4>
+<p> {{ completed }} </p>
+<p> {{ completed | percent}} </p>
+<p> {{ completed | percent: '2.2-4'}} </p>
+-->

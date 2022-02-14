@@ -1,0 +1,11 @@
+<div class="card mb-2">
+    <div class="card-header">Movie List</div>
+    <ul class="list-group list-group-flush">
+        <li routerLink="/detail/{{ movie.id }}" *ngFor="let movie of movies" class="list-group-item">
+            <span class="badge bg-primary">{{ '#' + movie.id }}</span> - {{
+            movie.name }}
+            <button (click)="deleteMovie(movie)" class=" float-end btn btn-close"></button>
+        </li>
+    </ul>
+</div>
+<addMovie></addMovie>

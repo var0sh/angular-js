@@ -1,0 +1,42 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prd of products">
+                        <th>
+                            {{'#' + prd.id }}
+                        </th>
+                        <td>
+                            {{ prd.name }}
+                        </td>
+                        <td>
+                            <img width="70" src="assets/image/{{ prd.imageUrl }}">
+                        </td>
+                        <td>
+                            {{ prd.price }}
+                        </td>
+                        <td class="text-center">
+                            <button (click)="editProduct(prd)" type="button"
+                                class="btn btn-outline-dark btn-sm me-3">Edit</button>
+                            <button (click)="deletePrd(prd)" type="button"
+                                class="btn btn-outline-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <product-change [editPrd]="editPrd"></product-change>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="card mb-2">
+    <div class="card-header">Add Movie</div>
+    <div class="container">
+        <div class="mt-2 row">
+            <div class="col-md-4">
+                <label class="col-form-label">Movie Name</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" #name>
+            </div>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-md-4">
+                <label class="col-form-label">Movie Image URL</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" #imageUrl>
+            </div>
+        </div>
+        <div class="my-2 row">
+            <div class="col-md-4">
+                <label class="col-form-label">Movie Description</label>
+            </div>
+            <div class="col-md-8">
+                <textarea class="form-control" #desc></textarea>
+            </div>
+        </div>
+        <div class="text-center row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <button
+                    (click)="addMovie(name.value, imageUrl.value, desc.value); name.value=''; imageUrl.value=''; desc.value='';"
+                    class="float-center my-2 btn btn-primary">add new movie</button>
+            </div>
+        </div>
+    </div>
+</div>

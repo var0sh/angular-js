@@ -1,0 +1,22 @@
+<form *ngIf="editPrd">
+    <legend>Edit selected product</legend>
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input #name [value]="editPrd.name" class="form-control" placeholder="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Product Price</label>
+        <input #price [value]="editPrd.price" class="form-control" placeholder="price">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Product Image URL</label>
+        <input #imageUrl [value]="editPrd.imageUrl" class="form-control" placeholder="image url">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Product Description</label>
+        <input #desc [value]="editPrd.desc" class="form-control" placeholder="description">
+    </div>
+    <button
+        (click)="saveChanges(editPrd.id, name.value, price.value, imageUrl.value, desc.value); name.value=''; price.value=''; imageUrl.value=''; desc.value='';"
+        type="submit" class="btn btn-primary">Save Changes</button>
+</form>

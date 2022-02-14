@@ -1,0 +1,17 @@
+<div class="container w-50 mb-5">
+    <p class="mb-3">Name Editor</p>
+    <form>
+        <div class="mb-4">
+            <label class="form-label">name</label>
+            <input [formControl]="name" class="form-control">
+        </div>
+        <div>
+            <label class="form-label">sirname</label>
+            <input class="form-control">
+        </div>
+
+        <button class="btn btn-primary mt-2" type="button" (click)="updateName()">update</button>
+
+        <p>Value: {{ name.value }}</p>
+    </form>
+</div>

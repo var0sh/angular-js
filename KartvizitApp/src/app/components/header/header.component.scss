@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.header {
+  height: 70px;
+  background-color: #9c27b0;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.headerMenu {
+  display: flex;
+  li {
+    a {
+      color: #fff;
+      padding: 0 10px;
+      font-size: 15px;
+      opacity: .7;
+      transition: linear .2s;
+      &:hover,
+      &.active{
+        opacity: 1;
+      }
+    }
+  }
+}

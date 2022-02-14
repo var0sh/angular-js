@@ -1,0 +1,38 @@
+<div class="card mb-2">
+    <div class="container">
+        <div class="mt-2 row">
+            <span class="badge bg-secondary">{{ 'Movie Id : ' + movie?.id }}</span>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-md-4">
+                <label class="col-form-label" for="name">Movie Name</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="name" [(ngModel)]="movie.name">
+            </div>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-md-4">
+                <label class="col-form-label" for="name">Movie Image URL</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" type="name" [(ngModel)]="movie.imageUrl">
+            </div>
+        </div>
+        <div class="mt-2 row">
+            <div class="col-md-4">
+                <label class="col-form-label" for="name">Movie Description</label>
+            </div>
+            <div class="col-md-8">
+                <textarea class="form-control" type="name" [(ngModel)]="movie.description"></textarea>
+            </div>
+        </div>
+        <div class="text-center row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <button (click)="saveChanges()" class="float-center my-2 btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
